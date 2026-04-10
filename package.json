@@ -1,0 +1,79 @@
+{
+  "name": "nomus",
+  "version": "1.0.0",
+  "description": "Convert text between naming conventions in Node.js and NestJS.",
+  "keywords": [
+    "camelcase",
+    "case-converter",
+    "kebab-case",
+    "naming",
+    "nest",
+    "node",
+    "pascalcase",
+    "snake_case",
+    "typescript"
+  ],
+  "homepage": "https://github.com/devalz/nomus.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devalz/nomus.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devalz/nomus.js/issues"
+  },
+  "license": "MIT",
+  "author": "Juan Fernando Alzate",
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./nest": {
+      "types": "./dist/types/nest/index.d.ts",
+      "import": "./dist/esm/nest/index.js",
+      "require": "./dist/cjs/nest/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "img/devjavu.jpg"
+  ],
+  "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && node scripts/write-cjs-package.mjs",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:types",
+    "test": "npm run build && node --test test/**/*.test.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^10.0.0 || ^11.0.0",
+    "reflect-metadata": "^0.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@nestjs/common": {
+      "optional": true
+    },
+    "reflect-metadata": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@nestjs/common": "^11.1.8",
+    "reflect-metadata": "^0.2.2",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
