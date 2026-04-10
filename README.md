@@ -1,28 +1,57 @@
-# Nomus
+# 📦 **Nomus**
 
-Nomus is a naming-style toolkit for Node.js and NestJS. It detects the current style of a string and converts it to formats like `PascalCase`, `camelCase`, `snake_case`, `SCREAMING_SNAKE_CASE`, `kebab-case`, `UPPER-KEBAB-CASE`, `Title Case`, and `Train-Case`.
+Nomus is a naming-style toolkit for Node.js and NestJS. It detects the current style of a string and converts it to formats like **`UPPERCCASE`, `lowercase`, `PascalCase`, `camelCase`, `snake_case`, `SCREAMING_SNAKE_CASE`, `kebab-case`, `UPPER-KEBAB-CASE`, `Title Case` and `Train-Case`**.
 
-## Features
+## 🚀 **Features**
 
-- Pure TypeScript API for Node.js and TypeScript projects
-- Optional NestJS integration exposed as `nomus/nest`
-- ESM, CommonJS, and declaration files ready for npm publishing
-- Detects common naming conventions and mixed input
-- No runtime dependencies for the core package
+✔ Convert *from any format* to:
 
-## Installation
+* **UPPERCCASE**
+* **lowercase**
+* **PascalCase**
+* **camelCase**
+* **snake_case**
+* **SCREAMING_SNAKE_CASE**
+* **kebab-case**
+* **UPPER-KEBAB-CASE**
+* **Title Case**
+* **Train-Case**
+
+✔ **Automatically detects**:
+
+* UPPERCCASE
+* lowercase
+* PascalCase
+* camelCase
+* snake_case
+* SCREAMING_SNAKE_CASE
+* kebab-case
+* UPPER-KEBAB-CASE
+* Title Case
+* Train-Case
+* and mixed cases
+  
+✔ Pure TypeScript API for Node.js and TypeScript projects  
+✔ Optional NestJS integration exposed as `nomus/nest`  
+✔ ESM, CommonJS, and declaration files ready for npm publishing  
+✔ Detects common naming conventions and mixed input  
+✔ No runtime dependencies for the core package  
+
+ ---
+ 
+## 📥 Installation
 
 ```bash
 npm install nomus
 ```
 
-For NestJS integration:
+**For NestJS integration:**
 
 ```bash
 npm install nomus @nestjs/common reflect-metadata
 ```
 
-## Node.js Usage
+## ✨ Node.js Usage
 
 ```ts
 import { Naming, detectNamingStyle, toSnakeCase } from "nomus";
@@ -37,7 +66,7 @@ Naming.toTrainCase("helloWorldTest");
 // "Hello-World-Test"
 ```
 
-## NestJS Usage
+## ✨ NestJS Usage
 
 ```ts
 import { Module } from "@nestjs/common";
@@ -63,41 +92,148 @@ export class SlugService {
 }
 ```
 
-## API
+---
 
-- `detectNamingStyle(input)`
-- `toUpperCase(input)`
-- `toLowerCase(input)`
-- `toPascalCase(input)`
-- `toCamelCase(input)`
-- `toSnakeCase(input)`
-- `toScreamingSnakeCase(input)`
-- `toKebabCase(input)`
-- `toUpperKebabCase(input)`
-- `toTitleCase(input)`
-- `toTrainCase(input)`
-- `Naming.*` static equivalents for all methods
+# 🧩 Available Methods
 
-## Detected Styles
+---
 
-- `UPPERCASE`
-- `lowercase`
-- `PascalCase`
-- `camelCase`
-- `snake_case`
-- `SCREAMING_SNAKE_CASE`
-- `kebab-case`
-- `UPPER-KEBAB-CASE`
-- `Title Case`
-- `Train-Case`
-- `Unknown / Mixed`
+## 🔤 **Naming.***
 
-## Publish Checklist
+Static equivalents for all methods
 
-```bash
-npm run build
-npm test
-npm publish --access public
+```node
+Naming.detectNamingStyle("UserVotesDetails");    // PascalCase
+Naming.toTrainCase("userVotesDetails");          // "User-Votes-Details"
 ```
 
-If the package name `nomus` is already taken on npm, update the `name` field in `package.json` before publishing. This repository lives at `devalz/nomus.js`.
+---
+
+## 🔍 **detectNamingStyle(input)**
+
+Automatically detects the naming convention of the text.
+
+### Possible results:
+
+- `'UPPERCASE'`
+- `'lowercase'`
+- `'PascalCase'`
+- `'camelCase'`
+- `'snake_case'`
+- `'SCREAMING_SNAKE_CASE'`
+- `'kebab-case'`
+- `'UPPER-KEBAB-CASE'`
+- `'Title Case'`
+- `'Train-Case'`
+- `'Unknown / Mixed'`
+
+### Examples:
+
+```node
+Naming.detectNamingStyle("UserVotesDetails");    // PascalCase
+detectNamingStyle("userVotesDetails");           // camelCase
+Naming.detectNamingStyle("user_votes_details");  // snake_case
+detectNamingStyle("user-votes-details");         // kebab-case
+Naming.detectNamingStyle("votes UsersDetails");  // Unknown / Mixed
+```
+
+---
+
+## 🔠 **toUpperCase(input)**
+
+Converts from any format to UPPERCASE.
+
+---
+
+## 🔡 **toLowerCase(input)**
+
+Converts from any format to lowercase.
+
+---
+
+## 🧱 **toPascalCase(input)**
+
+Converts from any format to PascalCase.
+
+---
+
+## 🐪 **toCamelCase(input)**
+
+Converts from any format to camelCase.
+
+---
+
+## 🐍 **toSnakeCase(input)**
+
+Converts from any format to snake_case.
+
+---
+
+## 🐍🔠 **toScreamingSnakeCase(input)**
+
+Converts from any format to SCREAMING_SNAKE_CASE.
+
+---
+
+## 🔗 **toKebabCase(input)**
+
+Converts from any format to kebab-case.
+
+---
+
+## 🔗🔠 **toUpperKebabCase(input)**
+
+Converts from any format to UPPER-KEBAB-CASE.
+
+---
+
+## 🔤 **toTitleCase(input)**
+
+Converts from any format to Title Case.
+
+---
+
+## 🚂 **toTrainCase(input)**
+
+Converts from any format to Title Case.
+
+---
+
+# 🧪 Additional Examples
+
+```csharp
+Naming.toPascalCase("hello-world");       // HelloWorld
+toCamelCase("HELLO_WORLD");               // helloWorld
+Naming.toSnakeCase("HelloWorld");         // hello_world
+toKebabCase("helloWorldTest");            // hello-world-test
+Naming.ToTrainCase("helloWorldTest");     // Hello-World-Test
+
+detectNamingStyle("MyVariable");          // PascalCase
+Naming.detectNamingStyle("myVariable");   // camelCase
+detectNamingStyle("my_variable");         // snake_case
+Naming.detectNamingStyle("my-variable");  // kebab-case
+detectNamingStyle("My Variable");         // Title Case
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License, which means you can freely use it in commercial and personal projects.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+You can:
+
+* Report issues
+* Propose improvements
+* Submit PRs
+  
+---
+
+## ⭐ Support the Project
+
+If this package was useful to you, consider leaving a ⭐ on GitHub or sharing it with other developers.
