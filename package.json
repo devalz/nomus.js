@@ -1,6 +1,6 @@
 {
   "name": "nomus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert text between naming conventions in Node.js and NestJS.",
   "keywords": [
     "camelcase",
