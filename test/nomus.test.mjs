@@ -13,6 +13,8 @@ test("detects common naming styles", () => {
 });
 
 test("converts inputs across formats", () => {
+  assert.equal(nomus.toUpperCase("hola mundo"), "HOLA MUNDO");
+  assert.equal(nomus.toLowerCase("Hola-Mundo"), "hola-mundo");
   assert.equal(nomus.toPascalCase("user_votes_details"), "UserVotesDetails");
   assert.equal(nomus.toCamelCase("UserVotesDetails"), "userVotesDetails");
   assert.equal(nomus.toSnakeCase("helloWorldTest"), "hello_world_test");

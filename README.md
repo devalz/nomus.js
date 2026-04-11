@@ -1,4 +1,16 @@
-# 📦 **Nomus**
+<p align="center">
+  <a href="#">
+    <img alt="Yarn" src="./img/nomus.png" width="250"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/nomus"><img alt="Downloads" src="https://img.shields.io/npm/dw/nomus"/></a>
+  <a href="https://github.com/devalz/nomus.js/releases"><img alt="Latest Release" src="https://img.shields.io/npm/v/nomus?label=latest&logo=npm"/></a>
+  <a href="https://github.com/devalz/nomus.js?tab=MIT-1-ov-file#readme"><img alt="Discord Chat" src="https://img.shields.io/npm/l/nomus"/></a>
+</p>
+
+---
 
 Nomus is a naming-style toolkit for Node.js and NestJS. It detects the current style of a string and converts it to formats like **`UPPERCCASE`, `lowercase`, `PascalCase`, `camelCase`, `snake_case`, `SCREAMING_SNAKE_CASE`, `kebab-case`, `UPPER-KEBAB-CASE`, `Title Case` and `Train-Case`**.
 

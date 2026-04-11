@@ -61,11 +61,11 @@ export function detectNamingStyle(input: string): NamingStyle | "" {
 }
 
 export function toUpperCase(input: string): string {
-  return splitWords(input).join("").toUpperCase();
+  return input.toUpperCase();
 }
 
 export function toLowerCase(input: string): string {
-  return splitWords(input).join("").toLowerCase();
+  return input.toLowerCase();
 }
 
 export function toPascalCase(input: string): string {
