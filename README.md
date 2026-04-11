@@ -51,6 +51,8 @@ npm install nomus
 npm install nomus @nestjs/common reflect-metadata
 ```
 
+Nomus is compatible with NestJS 10 projects that already use `reflect-metadata@0.1.x`, and also with `reflect-metadata@0.2.x`.
+
 ## ✨ Node.js Usage
 
 ```ts
