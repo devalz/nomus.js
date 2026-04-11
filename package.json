@@ -1,6 +1,6 @@
 {
   "name": "nomus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Convert text between naming conventions in Node.js and NestJS.",
   "keywords": [
     "camelcase",
@@ -28,6 +28,11 @@
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "nest": ["dist/types/nest/index.d.ts"]
+    }
+  },
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
@@ -43,6 +48,7 @@
   },
   "files": [
     "dist",
+    "nest.d.ts",
     "README.md",
     "LICENSE",
     "img/devjavu.jpg"
